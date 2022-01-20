@@ -1,0 +1,122 @@
+.sticky-header{
+	background: #fff!important;
+}
+
+
+.sticky-header  a{
+	color: #EC6627!important;
+}
+
+
+.form-group input[type='date']{
+	position: relative;
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    border: 1px solid #fff;
+    font-size: 15px;
+    font-weight: 500;
+    color: #848484;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+}
+
+
+.feature-block-one .inner-box .lower-content .icon-box{
+    line-height:  65px;
+    overflow: hidden;
+}
+
+
+.feature-block-one .inner-box .lower-content .icon-box img{
+    width: 50px;
+}
+
+
+.place-block-two .inner-box img{
+    height: 317px;
+}
+
+.tours-page-section{
+    padding: 80px 0px 120px 0px;
+}
+
+
+.page-item.disabled .page-link{
+    height: 50px;
+    width: 50px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+
+.page-item.active .page-link{
+    color: #fff;
+    box-shadow: 0px 15px 25px 0px rgb(255 124 91 / 30%);
+    background: #ff7c5b!important;
+
+    border-color:#ff7c5b;
+    position: relative;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    height: 50px;
+    width: 50px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 8%);
+    transition: all 500ms ease;
+}
+
+.pagination li a{
+    position: relative;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    height: 50px;
+    width: 50px;
+    line-height: 30px;
+    background: #ffffff;
+    text-align: center;
+    color: #061a3a;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 8%);
+    transition: all 500ms ease;
+}
+
+.page-item:last-child .page-link, .page-item:first-child .page-link{
+    border-radius: 50%;
+}
+
+.image-box img{
+    width: 100%;
+}
+
+.content_block_5 .content-box .social-links li:nth-child(2) a{
+    background: #55acee;
+}
+
+.content_block_5 .content-box .social-links li:nth-child(3) a{
+    background: #ff7c5b;
+}
+
+.content_block_5 .content-box .social-links li:nth-child(4) a{
+    background: #0073B1;
+}
+
+.content_block_5 .content-box .social-links li:nth-child(5) a{
+    background: #FF0000;
+}
+
+.map-inner iframe{
+    width: 100%;
+    height: 320px;
+}
