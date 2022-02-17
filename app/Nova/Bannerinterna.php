@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Bannerinterna extends Resource
@@ -23,7 +24,7 @@ class Bannerinterna extends Resource
      *
      * @var string
      */
-    public static $title = 'titulo';
+    public static $title = 'titulo_es';
 
     /**
      * The columns that should be searched.
@@ -31,7 +32,7 @@ class Bannerinterna extends Resource
      * @var array
      */
     public static $search = [
-        'titulo',
+        'titulo_es',
     ];
 
     /**
@@ -44,14 +45,24 @@ class Bannerinterna extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Titulo'),
-            Select::make('Pagina')->options([
+            Heading::make('Datos del servicio Español'),
+            Text::make('Titulo', 'titulo_es'),
+
+            Heading::make('Datos del servicio Inglés'),
+            Text::make('Titulo', 'titulo_en')->hideFromIndex(),
+            
+            Heading::make('Datos en común'),  
+            Select::make('¿En qué página aparecerá?','page')->options([
+                'sanmarco' => 'San marco',
+                'eccopac' => 'Eccopac'
+            ]), 
+            Select::make('¿En qué sección aparecerá?','seccion')->options([
+                'marcas' => 'Marcas',
                 'nosotros' => 'Nosotros',
-                'nacional' => 'Nacional',
-                'internacional' => 'Internacional',
+                'productos' => 'Producto',
                 'contacto' => 'Contacto'
-            ])->default('nosotros'),
-            Image::make('Imagen')->disk('public')->disableDownload(),
+            ]),    
+            Image::make('Imagen 1098x238px', 'imagen')->disk('public')->disableDownload(),
         ];
     }
 
@@ -101,13 +112,13 @@ class Bannerinterna extends Resource
 
 
 
-    public static function authorizedToCreate(Request $request)
-    {
-        return false;
-    }
+    // public static function authorizedToCreate(Request $request)
+    // {
+    //     return false;
+    // }
 
-    public function authorizedToDelete(Request $request)
-    {
-        return false;
-    }
+    // public function authorizedToDelete(Request $request)
+    // {
+    //     return false;
+    // }
 }

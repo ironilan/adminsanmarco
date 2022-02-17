@@ -22,13 +22,9 @@ class HomeController extends Controller
     public function index()
     {
         $page = 'inicio';
-        $banners = Banner::get()->last();
-        $nosotros = Nosotro::get()->last();
-        $inicio = Inicio::get()->last();
-        $destinos = Servicio::whereTipo('nacional')->whereHome('si')->orderBy('id', 'desc')->paginate(3);
-        $destinos_internacionales = Servicio::whereTipo('internacional')->whereHome('si')->orderBy('id', 'desc')->paginate(4); 
+        
 
-        return view('index', compact('page', 'banners', 'inicio', 'nosotros', 'destinos', 'destinos_internacionales'));
+        return view('index');
     }
 
     public function nosotros()

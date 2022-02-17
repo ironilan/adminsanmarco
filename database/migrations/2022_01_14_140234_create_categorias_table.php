@@ -17,7 +17,12 @@ class CreateCategoriasTable extends Migration
             $table->id();
             $table->enum('page',['eccopac', 'sanmarco'])->default('sanmarco');
             $table->enum('tipo',['producto', 'blog'])->default('blog');
-            $table->string('nombre')->nullable();
+            $table->string('nombre_es')->nullable();
+            $table->string('nombre_en')->nullable();
+            $table->string('resumen_es')->nullable();
+            $table->string('resumen_en')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('imagen')->nullable();
             $table->timestamps();
         });
     }

@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -24,7 +25,7 @@ class Banner extends Resource
      *
      * @var string
      */
-    public static $title = 'titulo';
+    public static $title = 'titulo_es';
 
     /**
      * The columns that should be searched.
@@ -32,7 +33,7 @@ class Banner extends Resource
      * @var array
      */
     public static $search = [
-        'titulo',
+        'titulo_es',
     ];
 
     /**
@@ -45,11 +46,20 @@ class Banner extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Heading::make('Banner'),
-            Text::make('Titulo'),
-            Text::make('Subtitulo'),
-            Image::make('Imagen', 'imagen')->disk('public')->disableDownload(),
-            //Image::make('Imagen movil', 'imagen_movil')->disk('public')->disableDownload()
+            Heading::make('Datos del servicio Español'),
+            Text::make('Titulo', 'titulo_es'),
+            Text::make('Subtitulo', 'subtitulo_es')->hideFromIndex(),
+
+            Heading::make('Datos del servicio Inglés'),
+            Text::make('Titulo', 'titulo_en')->hideFromIndex(),
+            Text::make('Subtitulo', 'subtitulo_en')->hideFromIndex(),
+            
+            Heading::make('Datos en común'),  
+            Select::make('¿En qué página aparecerá?','page')->options([
+                'sanmarco' => 'San marco',
+                'eccopac' => 'Eccopac'
+            ]),    
+            Image::make('Imagen (SM 1920x500px) (EC 1920x740px) ', 'imagen')->disk('public')->disableDownload(),
             
             
         ];
@@ -99,13 +109,13 @@ class Banner extends Resource
         return [];
     }
 
-    public static function authorizedToCreate(Request $request)
-    {
-        return false;
-    }
+    // public static function authorizedToCreate(Request $request)
+    // {
+    //     return false;
+    // }
 
-    public function authorizedToDelete(Request $request)
-    {
-        return false;
-    }
+    // public function authorizedToDelete(Request $request)
+    // {
+    //     return false;
+    // }
 }

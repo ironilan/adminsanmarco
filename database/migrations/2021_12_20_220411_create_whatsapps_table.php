@@ -17,8 +17,12 @@ class CreateWhatsappsTable extends Migration
             $table->id();
             $table->enum('page',['eccopac', 'sanmarco'])->default('sanmarco');
             $table->string('nombre')->nullable();
-            $table->string('area')->nullable();
-            $table->string('mensaje')->nullable();
+            $table->string('area_es')->nullable();
+            $table->string('mensaje_es')->nullable();
+
+            $table->string('area_en')->nullable();
+            $table->string('mensaje_en')->nullable();
+
             $table->string('whatsapp')->nullable();
             $table->string('imagen')->nullable();
             $table->timestamps();

@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Archivo extends Resource
@@ -23,7 +24,7 @@ class Archivo extends Resource
      *
      * @var string
      */
-    public static $title = 'titulo';
+    public static $title = 'nombre';
 
     /**
      * The columns that should be searched.
@@ -31,7 +32,7 @@ class Archivo extends Resource
      * @var array
      */
     public static $search = [
-        'titulo',
+        'nombre',
     ];
 
     /**
@@ -44,9 +45,15 @@ class Archivo extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Titulo'),
-            File::make('Archivo'),
-            BelongsTo::make('Destino', 'servicio', 'App\Nova\Servicio'),
+            Heading::make('Datos en Español'),
+            Text::make('Nombre', 'nombre_es'),
+            File::make('Archivo', 'archivo_es'),
+
+            Heading::make('Datos en Español'),
+            Text::make('Nombre', 'nombre_en'),            
+            File::make('Archivo', 'archivo_en'),
+
+            BelongsTo::make('Producto', 'producto', 'App\Nova\Producto'),
         ];
     }
 

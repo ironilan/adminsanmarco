@@ -44,8 +44,8 @@ class Whatsapp extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Nombre'),
-            Text::make('Área', 'area'),
-            Text::make('Mensaje'),
+            Text::make('Área', 'area_es'),
+            Text::make('Mensaje', 'mensaje_es'),
             Text::make('Whastapp (51978456321)', 'whatsapp'),
             Image::make('Imagen')->hideFromIndex(),
         ];

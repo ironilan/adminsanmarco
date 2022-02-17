@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Categoria extends Model
+class Serviciodetallesm extends Model
 {
     use HasFactory;
 
@@ -14,14 +14,8 @@ class Categoria extends Model
         return 'slug';
     }
 
-
-    public function subcategorias()
+    public function serviciosm()
     {
-        return $this->hasMany(Subcategoria::class);
-    }
-
-    public function proyectos()
-    {
-        return $this->hasMany(Proyecto::class);
+        return $this->belongsTo(Serviciosm::class);
     }
 }

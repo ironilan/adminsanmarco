@@ -9,7 +9,7 @@ class Servicio extends Model
 {
     use HasFactory;
 
-     public function getRouteKeyName()
+    public function getRouteKeyName()
     {
         return 'slug';
     }

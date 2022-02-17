@@ -9,8 +9,8 @@ class Archivo extends Model
 {
     use HasFactory;
 
-    public function servicio()
+    public function producto()
     {
-        return $this->belongsTo(Servicio::class);
+        return $this->belongsTo(Producto::class);
     }
 }

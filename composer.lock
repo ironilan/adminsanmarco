@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48c88d96fe85347dac14c11cf8bbcf09",
+    "content-hash": "bce1ba42f210389288e27b3383d0bd00",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2834,6 +2834,52 @@
                 "source": "https://github.com/mdixon18/fontawesome/tree/v0.2.1"
             },
             "time": "2020-09-23T19:38:32+00:00"
+        },
+        {
+            "name": "media24si/nova-youtube-field",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Media24si/nova-youtube-field.git",
+                "reference": "dc45bf0f1be948cf860948b93d46106354964d98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Media24si/nova-youtube-field/zipball/dc45bf0f1be948cf860948b93d46106354964d98",
+                "reference": "dc45bf0f1be948cf860948b93d46106354964d98",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Media24si\\NovaYoutubeField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Media24si\\NovaYoutubeField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova Youtube field.",
+            "keywords": [
+                "laravel",
+                "nova",
+                "youtube"
+            ],
+            "support": {
+                "issues": "https://github.com/Media24si/nova-youtube-field/issues",
+                "source": "https://github.com/Media24si/nova-youtube-field/tree/master"
+            },
+            "time": "2018-09-16T10:45:29+00:00"
         },
         {
             "name": "moneyphp/money",
@@ -9874,5 +9920,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }

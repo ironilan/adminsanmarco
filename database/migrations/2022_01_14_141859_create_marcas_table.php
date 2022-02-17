@@ -16,7 +16,9 @@ class CreateMarcasTable extends Migration
         Schema::create('marcas', function (Blueprint $table) {
             $table->id();
             $table->enum('page',['eccopac', 'sanmarco'])->default('sanmarco');
-            $table->string('titulo')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('titulo_es')->nullable();
+            $table->string('titulo_en')->nullable();
             $table->string('imagen')->nullable();
             $table->timestamps();
         });

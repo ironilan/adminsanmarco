@@ -21,6 +21,7 @@
         "laravel/tinker": "^2.5",
         "maatwebsite/excel": "^3.1",
         "mdixon18/fontawesome": "^0.2.1",
+        "media24si/nova-youtube-field": "^1.0",
         "nikaia/nova-rating-field": "^1.0",
         "vyuldashev/nova-money-field": "^1.4"
     },

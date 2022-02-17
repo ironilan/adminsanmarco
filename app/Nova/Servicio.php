@@ -32,7 +32,7 @@ class Servicio extends Resource
      *
      * @var string
      */
-    public static $title = 'titulo';
+    public static $title = 'titulo_es';
 
     /**
      * The columns that should be searched.
@@ -40,7 +40,7 @@ class Servicio extends Resource
      * @var array
      */
     public static $search = [
-        'titulo',
+        'titulo_es',
     ];
 
     /**
@@ -54,36 +54,28 @@ class Servicio extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             //BelongsTo::make('Subategoria', 'subcategoria', 'App\Nova\Subcategoria'),
-            Heading::make('Datos del destino'),
-            Text::make('Titulo'),
-            Slug::make('Url amigable', 'slug')->from('titulo')->separator('-'),
-            Select::make('Tipo')->options([
-                'nacional' => 'Nacional',
-                'internacional' => 'Internacional'
-            ]),
-            Number::make('Estrellas')->hideFromIndex(),
-            Money::make('Precio', 'PEN', 'precio'),
-            Trix::make('Descripción', 'descripcion'),
-            Text::make('Días', 'dias')->hideFromIndex(),
-            Text::make('Lugar')->hideFromIndex(),
-            Textarea::make('Ubicación', 'ubicacion')->hideFromIndex(),
+            
+            Heading::make('Datos del servicio Español'),
+            Text::make('Titulo', 'titulo_es'),
+            Trix::make('Descripción', 'descripcion_es'),
+            Slug::make('Url amigable', 'slug')->from('titulo_es')->separator('-'),
 
-            Heading::make('Imagenes'),
-            Image::make('Banner')->disk('public')->disableDownload()->hideFromIndex(),
-            Image::make('Imagen')->disk('public')->disableDownload()->hideFromIndex(),
 
-            Heading::make('Opciones'),
-            Boolean::make('¿Home?', 'home')
-                ->trueValue('si')
-                ->falseValue('no')->hideFromIndex(),
-            Boolean::make('¿Popular?', 'popular')
-                ->trueValue('si')
-                ->falseValue('no')->hideFromIndex(),
+            Heading::make('Datos del servicio Ingles'),
+            Text::make('Titulo', 'titulo_en')->hideFromIndex(),
+            Trix::make('Descripción', 'descripcion_en'),
 
-            HasMany::make('Archivos'),
-            HasMany::make('Plans'),
-            HasMany::make('Galerias'),
-            HasMany::make('Incluyes'),
+            Heading::make('Datos en común'),   
+            Select::make('¿En qué página parecerá?','page')->options([
+                'sanmarco' => 'San marco',
+                'eccopac' => 'Eccopac',
+                'todo' => 'Ambas páginas',
+            ]),         
+            Image::make('Imagen 497x332px', 'imagen')->disk('public')->disableDownload(),
+            
+            
+
+           
         ];
     }
 

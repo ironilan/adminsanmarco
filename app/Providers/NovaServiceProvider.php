@@ -102,6 +102,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         'resources' => [
                             \App\Nova\Config::class,                         
                             \App\Nova\Whatsapp::class,                         
+                            \App\Nova\Vendedor::class,                         
                         ]                       
                     ]),
                     TopLevelResource::make([
@@ -127,17 +128,55 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         ]                       
                     ]),
                     TopLevelResource::make([
-                        'label' => 'Estáticos',
+                        'label' => 'GLOBAL',
                         'expanded' => false,
                         'resources' => [                             
                              InternalLink::make([
-                                'label' => 'Inicio',
+                                'label' => 'Servicios',
                                 'badge' => null,
                                 'icon' => null,
                                 'target' => '_self',
-                                'path' => '/resources/inicios',
+                                'path' => '/resources/servicios',
+                                'params' => [ 'resourceId' => 1 ]
+                            ]), 
+                            InternalLink::make([
+                                'label' => 'Marcas',
+                                'badge' => null,
+                                'icon' => null,
+                                'target' => '_self',
+                                'path' => '/resources/marcas',
                                 'params' => [ 'resourceId' => 1 ]
                             ]),
+                            InternalLink::make([
+                                'label' => 'Categorías',
+                                'badge' => null,
+                                'icon' => null,
+                                'target' => '_self',
+                                'path' => '/resources/categorias',
+                                'params' => [ 'resourceId' => 1 ]
+                            ]),
+                            InternalLink::make([
+                                'label' => 'Productos',
+                                'badge' => null,
+                                'icon' => null,
+                                'target' => '_self',
+                                'path' => '/resources/productos',
+                                'params' => [ 'resourceId' => 1 ]
+                            ]),
+                            InternalLink::make([
+                                'label' => 'Post',
+                                'badge' => null,
+                                'icon' => null,
+                                'target' => '_self',
+                                'path' => '/resources/posts',
+                                'params' => [ 'resourceId' => 1 ]
+                            ])                             
+                        ]                       
+                    ]),
+                    TopLevelResource::make([
+                        'label' => 'SAN MARCO',
+                        'expanded' => false,
+                        'resources' => [
                             InternalLink::make([
                                 'label' => 'Nosotros',
                                 'badge' => null,
@@ -145,21 +184,45 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                                 'target' => '_self',
                                 'path' => '/resources/nosotros',
                                 'params' => [ 'resourceId' => 1 ]
-                            ])                              
-                        ]                       
-                    ]),
-                    TopLevelResource::make([
-                        'label' => 'Dinámicos',
-                        'expanded' => false,
-                        'resources' => [                             
-                             InternalLink::make([
-                                'label' => 'Destinos',
+                            ]),
+                            InternalLink::make([
+                                'label' => 'Servicios',
                                 'badge' => null,
                                 'icon' => null,
                                 'target' => '_self',
-                                'path' => '/resources/servicios',
+                                'path' => '/resources/serviciosms',
                                 'params' => [ 'resourceId' => 1 ]
-                            ])                                
+                            ])                       
+                        ]                       
+                    ]),
+                    TopLevelResource::make([
+                        'label' => 'ECCOPAC',
+                        'expanded' => false,
+                        'resources' => [                             
+                            InternalLink::make([
+                                'label' => 'Nosotros',
+                                'badge' => null,
+                                'icon' => null,
+                                'target' => '_self',
+                                'path' => '/resources/nosotroeccopacs',
+                                'params' => [ 'resourceId' => 1 ]
+                            ]), 
+                            // InternalLink::make([
+                            //     'label' => 'Partners',
+                            //     'badge' => null,
+                            //     'icon' => null,
+                            //     'target' => '_self',
+                            //     'path' => '/resources/partners',
+                            //     'params' => [ 'resourceId' => 1 ]
+                            // ]), 
+                            InternalLink::make([
+                                'label' => 'Líneas',
+                                'badge' => null,
+                                'icon' => null,
+                                'target' => '_self',
+                                'path' => '/resources/lineas',
+                                'params' => [ 'resourceId' => 1 ]
+                            ]),                               
                         ]                       
                     ]),
                 ]

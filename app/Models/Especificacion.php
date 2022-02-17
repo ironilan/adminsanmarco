@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Especificacion extends Model
 {
     use HasFactory;
+
+
+    public function producto()
+    {
+        return $this->belongsTo(Producto::class);
+    }
 }

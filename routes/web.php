@@ -28,22 +28,7 @@ Route::get('/', [HomeController::class, 'index'])->name('inicio');
 
 
 
-Route::get('nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
-Route::get('nacional', [HomeController::class, 'nacional'])->name('nacional');
-Route::get('internacional', [HomeController::class, 'internacional'])->name('internacional');
-Route::get('destino/{destino}', [HomeController::class, 'destino'])->name('destino.show');
-Route::get('contacto', [HomeController::class, 'contacto'])->name('contacto');
-Route::get('terminos', [HomeController::class, 'terminos'])->name('terminos');
-Route::get('politicas', [HomeController::class, 'politicas'])->name('politicas');
 
-
-Route::get('destinos', [HomeController::class, 'destinos'])->name('destinos');
-Route::get('descargar', [HomeController::class, 'descargar'])->name('descargar');
-
-Route::get('contacto', [HomeController::class, 'contacto'])->name('contacto');
-
-Route::post('destino_send', [HomeController::class, 'destino_send'])->name('destino_send.post');
-Route::post('contacto_send', [HomeController::class, 'contacto_send'])->name('contacto.post');
 
 
 Route::get('config_cache', function(){

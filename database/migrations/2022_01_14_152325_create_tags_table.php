@@ -15,8 +15,9 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->enum('page',['eccopac', 'sanmarco'])->default('sanmarco');  
-            $table->string('titulo')->nullable();
+            //$table->enum('page',['eccopac', 'sanmarco'])->default('sanmarco');  
+            $table->string('titulo_es')->nullable();
+            $table->string('titulo_en')->nullable();
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
