@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\SubcategoriaController;
 use App\Http\Controllers\Api\VendedorController;
 use App\Http\Controllers\Api\VideoController;
 use App\Http\Controllers\Api\WhatsappController;
+use App\Http\Controllers\MailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -73,3 +74,6 @@ Route::get('servicios_sanmarco', [ServicioController::class, 'servicios_sm'])->n
 
 //endpoint exclusivos para eccopac
 Route::get('categoriasProductos/{id}', [CategoriaController::class, 'categoriasProductos'])->name('categoriasProductos');
+
+
+

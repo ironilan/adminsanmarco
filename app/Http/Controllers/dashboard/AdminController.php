@@ -12,16 +12,11 @@ class AdminController extends Controller
 {
     public function cargar()
     {
-        if (!Auth::guest()) {
-            if (Auth::user()->role == 'admin') {
-                return view('dashboard.cargar');
-            }
-        }
-        abort(404);
+        return view('dashboard.cargar');
     }
 
 
-    public function import_libros(Request $request)
+    public function import_categorias(Request $request)
     {
         $file = $request->file('file');
 

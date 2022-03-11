@@ -16,6 +16,7 @@ class CategoriaController extends Controller
         $categorias_all = Categoria::wherePage($request->page)
                             //->orWhere('page', 'todo')
                             ->where('tipo', 'producto')
+                            ->orWhere('page', 'todo')
                             ->get();
 
         $categorias = [];

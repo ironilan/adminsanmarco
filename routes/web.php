@@ -56,6 +56,12 @@ Route::get('storage_link', function(){
 Route::get('system/{type}/{key}', [HomeController::class, 'system'])->name('system');
 
 
+Route::get('admin/cargar', [AdminController::class, 'cargar'])->name('cargar');
+Route::post('admin/cargar/categorias', [AdminController::class, 'import_categorias'])->name('admin.import.categorias');
+Route::post('admin/cargar/subcategorias', [AdminController::class, 'import_subcategorias'])->name('admin.import.subcategorias');
+Route::post('admin/cargar/productos', [AdminController::class, 'import_productos'])->name('admin.import.productos');
+
+
 
 
 

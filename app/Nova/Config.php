@@ -60,6 +60,7 @@ class Config extends Resource
             Image::make('Logo (sm 318x192px) (ec 318x82px)','logo_footer')->disk('public')->disableDownload(),
             Textarea::make('Texto footer')->hideFromIndex(),
             Textarea::make('Texto contacto')->hideFromIndex(),
+            Textarea::make('Mapa', 'map')->hideFromIndex(),
             Heading::make('Meta data'),
             Text::make('Keywords', 'keywords')->rules('required','string', 'max:255')->hideFromIndex(),
             Textarea::make('Descriptions', 'description')->hideFromIndex(),
